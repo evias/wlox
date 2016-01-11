@@ -889,3 +889,4 @@ DELETE FROM `admin_tabs` WHERE `admin_tabs`.`id` = 4;
 DELETE FROM `admin_tabs` WHERE `admin_tabs`.`id` = 32;
 UPDATE `admin_controls` SET page_id = 101, tab_id = 0 WHERE id IN (22,23,24);
 UPDATE `admin_controls` SET page_id = 102, tab_id = 0 WHERE id IN (178,139,141)
+UPDATE `admin_controls_methods` SET `id` = 2782,`method` = 'checkBox',`arguments` = 'a:9:{s:4:"name";s:15:"not_convertible";s:7:"caption";s:16:"Not Convertible?";s:8:"required";s:0:"";s:2:"id";s:0:"";s:5:"class";s:0:"";s:7:"jscript";s:0:"";s:5:"style";s:0:"";s:11:"label_class";s:0:"";s:7:"checked";s:0:"";}',`order` = 14,`control_id` = 256,`p_id` = 0 WHERE `admin_controls_methods`.`id` = 2782;
