@@ -1,12 +1,10 @@
-WLOX - Open Source Cryptocurrency Exchange  
+WLOX - Open Source Multi-Cryptocurrency Exchange  
 =========
-WLOX is an open source cryptocurrency exchange that supports multiple fiat currencies.
+WLOX is an open source cryptocurrency exchange that supports multiple cryptocurrencies and multiple fiat currencies.
 
-At this point, the exchange only supports one cryptocurrency at a time. We plan to adapt the project to a multiple-crypto-currency environment soon.
+**Please note: we are in the final stages of some major updates, including multi-coin support, which already functions. This document will be updated soon to reflect those changes.**
 
-WLOX is configured to use Crypto Capital Corporation as the default banking services provider. For more information about them, please visit http://www.cryptocapital.co.
-
-The purpose of this document is to walk you throught the process of a typical setup of the app using a bitcoind server.
+The purpose of this document is to walk you throught the process of a typical setup.
 
 **IF YOU INSTALLED WLOX PRIOR TO 14/01/2015, PLEASE READ THE FILE UPDATE_GUIDE_v1.04 BEFORE CONTINUING**
 
@@ -14,9 +12,9 @@ Getting Started
 --------------
 WLOX runs on the traditional PHP/MySQL/Apache setup.
 
-**For a development environment**, you can simply clone the whole set of WLOX repositories by doing `git clone --recursive https://github.com/wlox/wlox.git`.
+**For a development environment**, you can simply clone the whole set of WLOX repositories by doing `git clone --recursive https://github.com/mbassan/wlox.git`.
 
-**For a production environment**, it is strongly recommended to distribute the different repositories across multiple servers. You can clone each sub-module independently by doing `https://github.com/wlox/wlox-[submodule].git`.
+**For a production environment**, it is strongly recommended to distribute the different repositories across multiple servers. You can clone each sub-module independently by doing `https://github.com/mbassan/wlox-[submodule].git`.
 
 
 Project Structure
@@ -126,7 +124,7 @@ Setting up the API Server
 ---------------------
 The API server provides a layer of security and abstraction between the frontend server and the database in order to prevent direct communication between these two components. 
 
-Install by doing `git clone https://github.com/wlox/wlox-api.git` in the intended space.
+Install by doing `git clone https://github.com/mbassan/wlox-api.git` in the intended space.
 
 When this is ready, rename cfg/cfg.php.example to cfg/cfg.php and set:
 
@@ -140,7 +138,7 @@ Setting up the Auth Server
 
 The purpose of the Auth server is to allow users to initiate sessions and obtain a session key so that they can access protected methods on the API. 
 
-Install by doing `git clone https://github.com/wlox/wlox-auth.git` in the intended space.
+Install by doing `git clone https://github.com/mbassan/wlox-auth.git` in the intended space.
 
 When this is ready, rename cfg.php.example to cfg.php and set:
 
@@ -157,7 +155,7 @@ Setting up Cron Jobs
 
 The Cron Jobs necessary for WLOX to run are provided in this repository. 
 
-Install by doing `git clone https://github.com/wlox/wlox-auth.git` in the intended space.
+Install by doing `git clone https://github.com/mbassan/wlox-auth.git` in the intended space.
 
 When this is ready, rename cfg.php.example to cfg.php and set:
 
@@ -199,7 +197,7 @@ Setting up the Frontend
 -------------------
 The frontend server is intended to be the only part of the app which should be accesible to the user. 
 
-Install by doing `git clone https://github.com/wlox/wlox-frontend.git` in the intended space.
+Install by doing `git clone https://github.com/mbassan/wlox-frontend.git` in the intended space.
 
 The /htdocs folder provided in the package is intended to be the server's web directory.
 
@@ -237,7 +235,7 @@ The back-end is structure in the following manner:
 - **Transaction Types**: The names of the transaction types. *Do not delete*.
 
 **Requests**: On this page, you can see all requests to deposit and withdraw funds from WLOX user accounts. Requests in BTC will be processed automatically by cron/send_bitcoin.php and cron/receive_bitcoin.php. Requests involving fiat currencies must be processed manually. Requests that require your attention will be highlighted in red.
-- **Deposit/Withdraw**: On this page, (1) the first form is to upload an transactions export file from Crypto Capital (this will allow you to credit users for fiat currency transferred into your exchanges' escrow accounts); (2) the second form is to make withdrawals from your Crypto Capital escrow accounts (when you withdraw from one of these accounts, you need to tell the system how much was withdrawn using this form - editing the values directly might cause fiat to be lost to the system because the value might change in the time between loading it on the screen and specifying the new value).
+- **Deposit/Withdraw**: In revision. Check back soon.
 - **Request Status**: The status names that a request can have. *Do not delete any of these values*.
 - **Request Descriptions**: The descriptions of the different types of requests. *Do not delete*.
 
